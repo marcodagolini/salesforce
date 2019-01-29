@@ -22,7 +22,8 @@
    		var onSuccess1 = function(data) {
                 	// Do something with the returning data
             		visitorID = data;
-			document.getElementById("customerID").innerHTML = "Customer ID: " + visitorID;
+			var myURL = "https://liveperson.my.salesforce.com/_ui/search/ui/UnifiedSearchResults?asPhrase=1&searchType=2&str=Marco+Dagolini";
+			window.location.replace(myURL);
 			
 			
    		};
@@ -32,7 +33,7 @@
         		visitorID = null;
    		};
    
-   		SDK.get('visitorInfo.visitorId', onSuccess1, onError1);
+   		SDK.get('authenticatedData.personalInfo.name', onSuccess1, onError1);
 	   
    	});
    
@@ -41,39 +42,14 @@
 
  
  
- <title>Ticketing</title>
+ <title>SalesForce</title>
  
  <style>
- body {
- margin : 2px;
- padding: 2px;
- background-image: url("https://i.imgur.com/rD2mY58.png");
- background-repeat: no-repeat;
- }
-	 
-.myDiv {
-  color: red;
-  font-size: 20px;
-  position: absolute;
-  top: 50px;
-  left: 200px;
-}
-  
- .rotate {
-  border-radius: 50%;
-  -webkit-transition: -webkit-transform .8s ease-in-out;
-          transition:         transform .8s ease-in-out;
-}
-.rotate:hover {
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-}
  
  </style>
  </head>
  <body>
-	 </br></br></br>
-  <div id="customerID" class="myDiv"></div>
+
   
 
   
