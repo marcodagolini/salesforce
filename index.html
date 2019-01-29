@@ -1,0 +1,86 @@
+<html>
+ <head>
+ <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimumscale=1,
+ maximum-scale=1">
+ 
+
+	
+	 
+	 
+ 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+ <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
+
+  
+  <script>
+	  
+	  $(document).ready(function() {
+   		var SDK=lpTag.agentSDK;
+   		SDK.init();
+   		var visitorID;
+   
+   		var onSuccess1 = function(data) {
+                	// Do something with the returning data
+            		visitorID = data;
+			document.getElementById("customerID").innerHTML = "Customer ID: " + visitorID;
+			
+			
+   		};
+                
+   		var onError1 = function(data) {
+        		// Do something with the returning data
+        		visitorID = null;
+   		};
+   
+   		SDK.get('visitorInfo.visitorId', onSuccess1, onError1);
+	   
+   	});
+   
+   </script>
+
+
+ 
+ 
+ <title>Ticketing</title>
+ 
+ <style>
+ body {
+ margin : 2px;
+ padding: 2px;
+ background-image: url("https://i.imgur.com/rD2mY58.png");
+ background-repeat: no-repeat;
+ }
+	 
+.myDiv {
+  color: red;
+  font-size: 20px;
+  position: absolute;
+  top: 50px;
+  left: 200px;
+}
+  
+ .rotate {
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+          transition:         transform .8s ease-in-out;
+}
+.rotate:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+ 
+ </style>
+ </head>
+ <body>
+	 </br></br></br>
+  <div id="customerID" class="myDiv"></div>
+  
+
+  
+
+ 	
+ 	
+ 
+ 
+ 
+</body></html>
